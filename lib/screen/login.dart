@@ -21,7 +21,6 @@ class _LoginState extends State<Login> {
 
   @override
   void dispose() {
-    // هنا يتم  تعطيل اذا لم يتم استخدامها
     super.dispose();
     _email.dispose();
     _password.dispose();
@@ -105,7 +104,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-             const SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             //Button text
             Row(
