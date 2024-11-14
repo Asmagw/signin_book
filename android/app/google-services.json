@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "538649413044",
+    "project_id": "signinbookapp",
+    "storage_bucket": "signinbookapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538649413044:android:5e14df3e9b6f5bec7b9ee1",
+        "android_client_info": {
+          "package_name": "com.example.signin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA9aQLEGmwnMkbIkz59AUxsGYWU00UfrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538649413044:android:fba0edd437babaee7b9ee1",
+        "android_client_info": {
+          "package_name": "com.example.signin_t"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA9aQLEGmwnMkbIkz59AUxsGYWU00UfrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
