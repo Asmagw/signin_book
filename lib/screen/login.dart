@@ -104,7 +104,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            const SizedBox(height: 25),
+             const SizedBox(height: 25),
 
             //Button text
             Row(
