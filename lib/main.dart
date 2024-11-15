@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../newbook/screen/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import '../newbook/screen/home.dart';
-import '../newbook/screen/login.dart';
-import '../newbook/screen/signup.dart';
 import 'firebase_options.dart';
+import 'screen/auth.dart';
+import 'screen/home.dart';
+import 'screen/login.dart';
+import 'screen/signup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
