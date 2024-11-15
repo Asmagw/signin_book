@@ -2,21 +2,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   final _email = TextEditingController();
   final _password = TextEditingController();
-  Future signin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _email.text.trim(),
-      password: _password.text.trim(),
-    );
+  final _confirmpassword = TextEditingController();
+  Future signup() async {
+    if (passwordconfirmed()) {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _email.text.trim(),
+        password: _password.text.trim(),
+      );
+      Navigator.of(context).pushNamed('/');
+    }
+  }
+
+  bool passwordconfirmed() {
+    if (_password.text.trim() == _confirmpassword.text.trim()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   void openSignupScreen() {
@@ -28,6 +40,7 @@ class _LoginState extends State<Login> {
     super.dispose();
     _email.dispose();
     _password.dispose();
+    _confirmpassword.dispose();
   }
 
   @override
@@ -46,7 +59,7 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 20),
 
             Text(
-              'تسجيل دخــول',
+              'تسجيل حـسـاب جديد',
               style: GoogleFonts.robotoCondensed(
                   fontSize: 24, fontWeight: FontWeight.bold),
             ),
@@ -68,7 +81,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             //password
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -83,25 +96,46 @@ class _LoginState extends State<Login> {
                     obscureText: true,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'password',
+                      hintText: 'Password',
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
+            // confirm password
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextField(
+                    controller: _confirmpassword,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Confirm Password',
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 15),
             //button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: GestureDetector(
-                onTap: signin,
+                onTap: signup,
                 child: Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 9, 17, 107),
                       borderRadius: BorderRadius.circular(12)),
                   child: Center(
-                    child: Text('تسجيل دخــول ',
+                    child: Text('تسجيل ',
                         style: GoogleFonts.tajawal(
                             fontSize: 18, color: Colors.white)),
                   ),
@@ -114,12 +148,12 @@ class _LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('ليس لديك حساب؟ ',
+                Text(' قــم ',
                     style: GoogleFonts.robotoCondensed(color: Colors.black)),
                 GestureDetector(
                   onTap: openSignupScreen,
                   child: Text(
-                    ' حساب جديد',
+                    ' بتسجيل دخول   ',
                     style: GoogleFonts.robotoCondensed(color: Colors.blue),
                   ),
                 ),
