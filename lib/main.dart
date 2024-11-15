@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:signbook/screen/auth.dart';
+import '../newbook/screen/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:signbook/screen/home.dart';
-import 'package:signbook/screen/login.dart';
-import 'package:signbook/screen/signup.dart';
+import '../newbook/screen/home.dart';
+import '../newbook/screen/login.dart';
+import '../newbook/screen/signup.dart';
 import 'firebase_options.dart';
 
 void main() async {
