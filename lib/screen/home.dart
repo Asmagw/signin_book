@@ -13,27 +13,82 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'hello',
-            ),
-            Text(
-              user.email!,
-              style: TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 45),
-            MaterialButton(
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-              },
-              color: Color.fromARGB(255, 132, 186, 230),
-              child: Text('تسجيل خروج'),
-            )
-          ],
+      appBar: AppBar(
+        title: TextField(
+          decoration: InputDecoration(
+            hintText: 'ابحث هنا',
+            prefixIcon: Icon(Icons.search),
+          ),
         ),
+      ),
+      body: Column(
+        children: [
+          // قائمة المنتجات
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: [
+                ProductCard(
+                  image: 'images/illustration2.jpg',
+                  name: ' مشروع تخرج ',
+                  oldPrice: 69.99,
+                  newPrice: 50.99,
+                  rating: 4.5,
+                ),
+                ProductCard(
+                  image: 'images/illustration2.jpg',
+                  name: 'مسروع تخؤج',
+                  oldPrice: 69.99,
+                  newPrice: 50.99,
+                  rating: 5,
+                ),
+              ],
+            ),
+          ),
+          // أقسام المنتجات
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                // ... عناصر أخرى للأقسام
+              ],
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [],
+        // ... عناصر أخرى للـ BottomNavigationBar
+      ),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  final String image;
+  final String name;
+  final double oldPrice;
+  final double newPrice;
+  final double rating;
+
+  const ProductCard({
+    Key? key,
+    required this.image,
+    required this.name,
+    required this.oldPrice,
+    required this.newPrice,
+    required this.rating,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: [
+          Image.asset(image),
+          Text(name),
+        ],
       ),
     );
   }
