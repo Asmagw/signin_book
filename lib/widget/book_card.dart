@@ -7,13 +7,13 @@ class book_card extends StatelessWidget {
     required Key key,
     required this.itemIndex,
     this.Catag,
-    required this.press,
+    required this.press, this.catagList,
   }) : super(key: key);
 
   final int itemIndex;
-  final Catag Catag;
+  final catagList Catag;
   final Function press;
-  final dynamic Catag;
+  final dynamic catagList;
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +96,7 @@ class book_card extends StatelessWidget {
                           color: kSecondaryColor,
                           borderRadius: BorderRadius.circular(22),
                         ),
-                        child: Text('السعر: \$${Catag.url}'),
+                        child: Text('للتحميل: \$${Catag.url}'),
                       ),
                     ),
                   ],
@@ -107,5 +107,11 @@ class book_card extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('Catag', Catag));
   }
 }

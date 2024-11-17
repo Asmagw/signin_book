@@ -28,4 +28,13 @@ List<Catag> catagList = [
     url: "C:\\Users\\asus\\Documents\\مشروع التخرج بالكامل",
     year: "2017",
   ),
+  Catag(
+    id: 2,
+    image: "images/",
+    dep: " علوم حاسوب",
+    depId: "o0dxk6v4C3zjGu3edhWO",
+    name: "تصميم وتنفيذ جهاز الاستدعاء بين المريض وطاقم التمريض",
+    url: "C:\\Users\\asus\\Documents\\مشروع التخرج بالكامل",
+    year: "2017",
+  ),
 ];
