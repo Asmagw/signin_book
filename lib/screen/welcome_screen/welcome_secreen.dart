@@ -31,8 +31,8 @@ class WelcomeScreen extends StatelessWidget {
   Widget _buildWelcomeMessage(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      margin: EdgeInsets.symmetric(horizontal: 24.0),
-      padding: EdgeInsets.only(left: 8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.only(left: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -40,7 +40,7 @@ class WelcomeScreen extends StatelessWidget {
             " أهـلا بـكم في ",
             style: Theme.of(context).textTheme.displayMedium,
           ),
-          SizedBox(height: 22.0),
+          const SizedBox(height: 22.0),
           Text(
             "المكتـــبة الإلكترونية",
             style: GoogleFonts.tajawal(

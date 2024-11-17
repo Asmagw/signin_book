@@ -31,13 +31,13 @@ class MyWidget extends StatelessWidget {
         hintColor: kPrimaryColor,
       ),
       // Arabic RTL
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: [Locale("ar", "AE")],
-      locale: Locale("ar", "AE"),
+      supportedLocales: const [Locale("ar", "AE")],
+      locale: const Locale("ar", "AE"),
 
       routes: {
         '/': (context) => const Auth(),

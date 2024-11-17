@@ -3,10 +3,10 @@ import 'package:signbook/constants.dart';
 
 class BookImage extends StatelessWidget {
   const BookImage({
-    required Key key,
+    super.key,
     required this.size,
     required this.image,
-  }) : super(key: key);
+  });
 
   final Size size;
   final String image;

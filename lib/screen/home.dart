@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:signbook/constants.dart';
 import 'package:signbook/widget/homebody.dart';
- 
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -19,7 +18,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: homeAppBar(),
-      body: homebody(),
+      body: const homebody(),
     );
   }
 

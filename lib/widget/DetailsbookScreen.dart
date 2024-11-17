@@ -6,8 +6,8 @@ import 'package:signbook/widget/detalis_body.dart';
 class DetailsbookScreen extends StatelessWidget {
   final Catag catag;
 
-  const DetailsbookScreen({required Key key, required this.catag, required Catag Catag})
-      : super(key: key);
+  const DetailsbookScreen(
+      {super.key, required this.catag, required Catag Catag});
 
   @override
   Widget build(BuildContext context) {

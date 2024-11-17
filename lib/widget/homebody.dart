@@ -3,7 +3,11 @@ import 'package:signbook/constants.dart';
 import 'package:signbook/models/catag_card.dart';
 import 'package:signbook/widget/DetailsbookScreen.dart';
 
+import 'book_card.dart';
+
 class homebody extends StatelessWidget {
+  const homebody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,11 +39,11 @@ class homebody extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => DetailsbookScreen(
                             Catag: catagList[index],
+                            catag: catagList[index],
                           ),
                         ),
                       );
                     },
-                    key: null,
                   ),
                 ),
               ],
