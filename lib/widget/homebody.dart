@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:signbook/constants.dart';
-import 'package:store_app/constants.dart';
+import 'package:signbook/models/catag.dart';
+import 'package:signbook/widget/detailes/DetailsbookScreen.dart';
 
 class homebody extends StatelessWidget {
   @override
@@ -24,10 +25,10 @@ class homebody extends StatelessWidget {
                   ),
                 ),
                 ListView.builder(
-                  itemCount: Catag.length,
-                  itemBuilder: (context, index) => Catag(
+                  itemCount: catagList.length,
+                  itemBuilder: (context, index) => catagList(
                     itemIndex: index,
-                    product: Catag[index],
+                    product: catagList[index],
                     press: () {
                       Navigator.push(
                         context,

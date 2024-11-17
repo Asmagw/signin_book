@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:signbook/models/catag.dart';
-import '../../constants.dart';
+import 'package:signbook/constants.dart';
 
 class book_card extends StatelessWidget {
   const book_card({
