@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:signbook/constants.dart';
-import 'package:signbook/models/catag.dart';
-import 'package:signbook/widget/detailes/book_image.dart';
+import 'package:signbook/models/catag_card.dart';
+import 'package:signbook/widget/book_image.dart';
 
 class DetailsBody extends StatelessWidget {
   final Catag catag;

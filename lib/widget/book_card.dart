@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:signbook/constants.dart';
 
-class book_card extends StatelessWidget {
-  const book_card({
+class BookCard extends StatelessWidget {
+  const BookCard({
     required Key key,
     required this.itemIndex,
+    required this.press,
     this.Catag,
-    required this.press, this.catagList,
+    this.catagList,
   }) : super(key: key);
 
   final int itemIndex;
-  final catagList Catag;
   final Function press;
   final dynamic catagList;
-
+  final dynamic Catag;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Container(
       margin: const EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
         vertical: kDefaultPadding / 2,
       ),
-      height: 190.0,
+      height: 220.0,
       child: InkWell(
-        onTap: press,
+        onTap: () => press(),
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              height: 166.0,
+              height: 190.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
                 color: Colors.white,
@@ -59,13 +60,13 @@ class book_card extends StatelessWidget {
               bottom: 0.0,
               right: 0.0,
               child: SizedBox(
-                height: 136.0,
-                // Because oure image is 200 width, then: width - 200
+                height: 150.0,
                 width: size.width - 200,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Spacer(),
+
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: kDefaultPadding),
@@ -74,7 +75,9 @@ class book_card extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
+
                     const Spacer(),
+
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: kDefaultPadding),
@@ -83,7 +86,24 @@ class book_card extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ),
+
                     const Spacer(),
+
+                    // Year section
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: kDefaultPadding),
+                      child: Text(
+                        "السنة: ${Catag.year}",
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: Colors.grey[700],
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ),
+
+                    const Spacer(),
+
                     Padding(
                       padding: const EdgeInsets.all(kDefaultPadding),
                       child: Container(
@@ -95,7 +115,7 @@ class book_card extends StatelessWidget {
                           color: kSecondaryColor,
                           borderRadius: BorderRadius.circular(22),
                         ),
-                        child: Text('للتحميل: \$${Catag.url}'),
+                        child: Text('للتحميل: ${Catag.url}'),
                       ),
                     ),
                   ],
@@ -106,11 +126,5 @@ class book_card extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('Catag', Catag));
   }
 }

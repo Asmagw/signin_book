@@ -21,7 +21,7 @@ class Catag {
 List<Catag> catagList = [
   Catag(
     id: 1,
-    image: "images/",
+    image: "assets/images/boo.png",
     dep: "الوسائط المتعددة",
     depId: "o0dxk6v4C3zjGu3edhWO",
     name: "تصميم وتنفيذ جهاز الاستدعاء بين المريض وطاقم التمريض",

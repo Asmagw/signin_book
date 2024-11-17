@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:signbook/constants.dart';
-import 'package:signbook/models/catag.dart';
-import 'package:signbook/widget/detailes/DetailsbookScreen.dart';
+import 'package:signbook/models/catag_card.dart';
+import 'package:signbook/widget/DetailsbookScreen.dart';
 
 class homebody extends StatelessWidget {
   @override
@@ -26,19 +26,20 @@ class homebody extends StatelessWidget {
                 ),
                 ListView.builder(
                   itemCount: catagList.length,
-                  itemBuilder: (context, index) => catagList(
+                  itemBuilder: (context, index) => BookCard(
                     itemIndex: index,
-                    product: catagList[index],
+                    Catag: catagList[index],
                     press: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => DetailsbookScreen(
-                            product: products[index],
+                            Catag: catagList[index],
                           ),
                         ),
                       );
                     },
+                    key: null,
                   ),
                 ),
               ],

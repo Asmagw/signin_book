@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:signbook/constants.dart';
-import 'package:signbook/models/catag.dart';
-import 'package:signbook/widget/detailes/detalis_body.dart';
+import 'package:signbook/models/catag_card.dart';
+import 'package:signbook/widget/detalis_body.dart';
 
 class DetailsbookScreen extends StatelessWidget {
   final Catag catag;
 
-  const DetailsbookScreen({required Key key, required this.catag})
+  const DetailsbookScreen({required Key key, required this.catag, required Catag Catag})
       : super(key: key);
 
   @override
