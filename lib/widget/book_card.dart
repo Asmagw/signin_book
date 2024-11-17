@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:signbook/models/catag.dart';
 import '../../constants.dart';
 
 class book_card extends StatelessWidget {
   const book_card({
-    Key key,
-    this.itemIndex,
-    this.product,
-    this.press,
+    required Key key,
+    required this.itemIndex,
+    this.Catag,
+    required this.press,
   }) : super(key: key);
 
   final int itemIndex;
-  final Product product;
+  final Catag Catag;
   final Function press;
+  final dynamic Catag;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(
+      margin: const EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
         vertical: kDefaultPadding / 2,
       ),
@@ -32,7 +34,7 @@ class book_card extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                       offset: Offset(0, 15),
                       blurRadius: 25,
@@ -44,11 +46,12 @@ class book_card extends StatelessWidget {
               top: 0.0,
               left: 0.0,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 height: 160.0,
                 width: 200.0,
                 child: Image.asset(
-                  product.image,
+                  Catag.image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -63,29 +66,29 @@ class book_card extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: kDefaultPadding),
                       child: Text(
-                        product.title,
-                        style: Theme.of(context).textTheme.bodyText1,
+                        Catag.dep,
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: kDefaultPadding),
                       child: Text(
-                        product.subTitle,
-                        style: Theme.of(context).textTheme.caption,
+                        Catag.name,
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Padding(
                       padding: const EdgeInsets.all(kDefaultPadding),
                       child: Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: kDefaultPadding * 1.5, // 30 px padding
                           vertical: kDefaultPadding / 5, // 5 px padding
                         ),
@@ -93,7 +96,7 @@ class book_card extends StatelessWidget {
                           color: kSecondaryColor,
                           borderRadius: BorderRadius.circular(22),
                         ),
-                        child: Text('السعر: \$${product.price}'),
+                        child: Text('السعر: \$${Catag.url}'),
                       ),
                     ),
                   ],

@@ -1,5 +1,3 @@
-import 'package:signbook/models/catag.dart';
-
 class Catag {
   final String image; // صورة
   final String dep; // التخصص
@@ -10,19 +8,19 @@ class Catag {
   final String year; // السنة
 
   Catag({
-    this.id,
-    this.dep,
-    this.depId,
-    this.image,
-    this.name,
-    this.url,
-    this.year,
+    required this.id,
+    required this.dep,
+    required this.depId,
+    required this.image,
+    required this.name,
+    required this.url,
+    required this.year,
   });
 }
 
-List<Catag> Catag = [
+List<Catag> catagList = [
   Catag(
-    id:1,
+    id: 1,
     image: "images/",
     dep: "الوسائط المتعددة",
     depId: "o0dxk6v4C3zjGu3edhWO",
@@ -30,5 +28,4 @@ List<Catag> Catag = [
     url: "C:\\Users\\asus\\Documents\\مشروع التخرج بالكامل",
     year: "2017",
   ),
-  
-  ];
+];

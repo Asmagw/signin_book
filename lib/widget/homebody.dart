@@ -23,14 +23,11 @@ class homebody extends StatelessWidget {
                     ),
                   ),
                 ),
-
-
-                
                 ListView.builder(
-                  itemCount: products.length,
-                  itemBuilder: (context, index) => ProductCard(
+                  itemCount: Catag.length,
+                  itemBuilder: (context, index) => Catag(
                     itemIndex: index,
-                    product: products[index],
+                    product: Catag[index],
                     press: () {
                       Navigator.push(
                         context,
