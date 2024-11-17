@@ -60,7 +60,7 @@ class _SignupState extends State<Signup> {
 
             Text(
               'تسجيل حـسـاب جديد',
-              style: GoogleFonts.robotoCondensed(
+              style: GoogleFonts.almarai(
                   fontSize: 24, fontWeight: FontWeight.bold),
             ),
             //Email TextFiled
@@ -136,7 +136,7 @@ class _SignupState extends State<Signup> {
                       borderRadius: BorderRadius.circular(12)),
                   child: Center(
                     child: Text('تسجيل ',
-                        style: GoogleFonts.tajawal(
+                        style: GoogleFonts.almarai(
                             fontSize: 18, color: Colors.white)),
                   ),
                 ),
@@ -154,7 +154,7 @@ class _SignupState extends State<Signup> {
                   onTap: openSignupScreen,
                   child: Text(
                     ' بتسجيل دخول   ',
-                    style: GoogleFonts.robotoCondensed(color: Colors.blue),
+                    style: GoogleFonts.almarai(color: Colors.blue),
                   ),
                 ),
               ],
