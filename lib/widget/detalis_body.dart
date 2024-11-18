@@ -6,7 +6,7 @@ import 'package:signbook/widget/book_image.dart';
 class DetailsBody extends StatelessWidget {
   final Catag catag;
 
-  const DetailsBody({required Key key, required this.catag}) : super(key: key);
+  const DetailsBody({super.key, required this.catag});
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +45,12 @@ class DetailsBody extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
                 child: Text(
-                  catagList.name,
+                  catag.name,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               Text(
-                'للتحميل \$${catagList.url}',
+                'للتحميل \$${catag.url}',
                 style: const TextStyle(
                   fontSize: 28.0,
                   fontWeight: FontWeight.w600,
@@ -68,7 +68,7 @@ class DetailsBody extends StatelessWidget {
             vertical: kDefaultPadding / 2,
           ),
           child: Text(
-            catagList.dep,
+            catag.dep,
             style: const TextStyle(color: Colors.white, fontSize: 19.0),
           ),
         ),

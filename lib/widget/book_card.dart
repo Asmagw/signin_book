@@ -3,12 +3,12 @@ import 'package:signbook/constants.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({
-    required Key key,
+    super.key,
     required this.itemIndex,
     required this.press,
     this.Catag,
     this.catagList,
-  }) : super(key: key);
+  });
 
   final int itemIndex;
   final Function press;
